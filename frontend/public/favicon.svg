@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="8" fill="#0d0e12"/>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" stroke="#00d4d4" stroke-opacity="0.5"/>
+  <!-- Glowing Cyan Bolt -->
+  <path d="M18 4L7 17H16L14 28L25 15H16L18 4Z" fill="#00d4d4" stroke="#00b3b3" stroke-width="0.5" stroke-linejoin="round"/>
+</svg>
