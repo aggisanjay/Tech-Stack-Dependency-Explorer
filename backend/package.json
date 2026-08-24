@@ -5,9 +5,9 @@
   "description": "StackGraph Backend API with Neo4j/CognoDB Bolt Driver",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsx watch src/index.ts",
+    "build": "node api.js && tsc",
+    "start": "node api.js && node dist/index.js",
+    "dev": "node api.js && tsx watch src/index.ts",
     "seed": "tsx seed/seed.ts"
   },
   "dependencies": {
