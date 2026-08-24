@@ -1,6 +1,4 @@
 # Environment variables (credentials & secrets)
-.env
-.env.local
 .env.*.local
 *.env
 backend/.env
@@ -37,7 +35,6 @@ Thumbs.db
 *.sln
 *.sw?
 .idea/
-.vscode/
 *.local
 
 # Temporary files & cache
@@ -46,3 +43,7 @@ Thumbs.db
 .turbo
 .parcel-cache
 .cache/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat
