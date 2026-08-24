@@ -158,8 +158,9 @@ export async function getPackageDependents(name: string): Promise<GraphNode[]> {
  */
 export async function getCircularDependencies(): Promise<string[][]> {
   const cypher = `
-    MATCH path = (p:Package)-[:DEPENDS_ON*2..]->(p)
-    RETURN [n IN nodes(path) | n.name] AS cycle
+    MATCH (p1:Package)-[:DEPENDS_ON]->(p2:Package)
+    MATCH path = (p2)-[:DEPENDS_ON*1..5]->(p1)
+    RETURN [p1.name] + [n IN nodes(path) | n.name] AS cycle
     LIMIT 20
   `;
 

@@ -5,66 +5,62 @@
 @layer base {
   :root {
     color-scheme: dark;
-    --bg-primary: #080b13;
-    --bg-secondary: #0c101d;
-    --bg-card: #111728;
+    --bg-primary: #0d0d0d;
+    --bg-raised: #1a1a1a;
+    --bg-overlay: #141414;
     --border-subtle: rgba(255, 255, 255, 0.07);
-    --border-bright: rgba(255, 255, 255, 0.14);
-    --accent-glow: rgba(99, 102, 241, 0.25);
+    --border-bright: rgba(255, 255, 255, 0.12);
+    --accent: #00d4d4;
+    --accent-glow: rgba(0, 212, 212, 0.15);
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   body {
     margin: 0;
     background-color: var(--bg-primary);
-    color: #f1f5f9;
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #e5e5e5;
+    font-family: 'Space Mono', ui-monospace, SFMono-Regular, monospace;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
   }
 }
 
-/* Background grid pattern */
+/* Background grid pattern for graph canvas */
 .bg-grid-pattern {
   background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
 }
 
+/* Radial gradient backgrounds */
 .bg-radial-gradient {
-  background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.12) 0%, transparent 65%);
+  background: radial-gradient(circle at 50% 0%, rgba(0, 212, 212, 0.06) 0%, transparent 65%);
 }
 
 .bg-radial-glow {
-  background: radial-gradient(circle at top center, rgba(56, 189, 248, 0.08) 0%, transparent 50%);
+  background: radial-gradient(circle at top center, rgba(0, 212, 212, 0.04) 0%, transparent 50%);
 }
 
-/* Glassmorphism surfaces */
-.glass-surface {
-  background: rgba(14, 19, 34, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-card {
-  background: rgba(17, 24, 42, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.glass-card-hover {
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass-card-hover:hover {
-  background: rgba(22, 31, 54, 0.85);
-  border-color: rgba(99, 102, 241, 0.35);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.18);
-}
+/* Category badge colors */
+.badge-frontend { background: rgba(0, 212, 212, 0.12); color: #00d4d4; border: 1px solid rgba(0, 212, 212, 0.25); }
+.badge-backend { background: rgba(139, 92, 246, 0.12); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.25); }
+.badge-language { background: rgba(251, 191, 36, 0.12); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.25); }
+.badge-database { background: rgba(52, 211, 153, 0.12); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.25); }
+.badge-testing { background: rgba(244, 63, 94, 0.12); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.25); }
+.badge-devops { background: rgba(249, 115, 22, 0.12); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.25); }
+.badge-tool { background: rgba(96, 165, 250, 0.12); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.25); }
+.badge-library { background: rgba(167, 139, 250, 0.12); color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.25); }
+.badge-runtime { background: rgba(52, 211, 153, 0.12); color: #6ee7b7; border: 1px solid rgba(52, 211, 153, 0.25); }
+.badge-cache { background: rgba(251, 191, 36, 0.12); color: #fde68a; border: 1px solid rgba(251, 191, 36, 0.25); }
+.badge-queue { background: rgba(244, 114, 182, 0.12); color: #f472b6; border: 1px solid rgba(244, 114, 182, 0.25); }
+.badge-monitoring { background: rgba(129, 140, 248, 0.12); color: #a5b4fc; border: 1px solid rgba(129, 140, 248, 0.25); }
+.badge-service { background: rgba(45, 212, 191, 0.12); color: #2dd4bf; border: 1px solid rgba(45, 212, 191, 0.25); }
+.badge-framework { background: rgba(192, 132, 252, 0.12); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.25); }
 
 /* Custom modern scrollbars */
 ::-webkit-scrollbar {
@@ -77,12 +73,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.10);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.20);
 }
 
 /* Text clamp utilities */
@@ -102,6 +98,13 @@
 
 /* Focus styles for keyboard accessibility */
 :focus-visible {
-  outline: 2px solid #6366f1;
+  outline: 2px solid #00d4d4;
   outline-offset: 2px;
+}
+
+/* Filter chip active state */
+.filter-chip-active {
+  background: rgba(0, 212, 212, 0.15);
+  color: #00d4d4;
+  border-color: rgba(0, 212, 212, 0.4);
 }
